@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   before_action :require_login
+  if ENV.has_key? 'DMEMO_ALLOW_ANONYMOUS_TO_READ'
+    skip_before_action :require_login, only: [:index, :show]
+  end
   before_action :set_sidebar_databases, :set_search_result, only: %w(index show new edit)
 
   private
