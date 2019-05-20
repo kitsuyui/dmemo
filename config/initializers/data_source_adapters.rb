@@ -4,4 +4,5 @@ ActiveSupport.on_load(:active_record) do
   DataSourceAdapters.register_adapter(DataSourceAdapters::RedshiftAdapter, 'redshift')
   DataSourceAdapters.register_adapter(DataSourceAdapters::BigqueryAdapter, 'bigquery')
   DataSourceAdapters.register_adapter(DataSourceAdapters::PrestoAdapter, 'presto')
+  DataSourceAdapters.register_adapter(DataSourceAdapters::SqlserverAdapter, 'sqlserver')
 end
